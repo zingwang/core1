@@ -11,8 +11,19 @@ sourceCompatibility = '17'
 repositories {
 	mavenCentral()
 }
+//lombok 설정 추가 시작
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+//lombok 설정 추가 끝
 
 dependencies {
+
+	// LOMBOK
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 	implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
